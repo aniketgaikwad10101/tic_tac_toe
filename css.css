@@ -136,7 +136,7 @@ color: yellow;
         justify-content: center;
     
         min-height:  0vh;
-        width: 60vw;
+        width: 90vw;
         margin-bottom: 40px;
         margin-top: 20px;
         
@@ -150,8 +150,8 @@ color: yellow;
         align-items: center;
         justify-content: center;
         gap: 15px;
-        min-height: 30vh;
-       width: 60vw;
+        min-height: 40vh;
+       width: 90vw;
        
        
         
