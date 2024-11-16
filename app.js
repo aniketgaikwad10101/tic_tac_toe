@@ -2,6 +2,7 @@ let boxs = document.querySelectorAll(".box");
 let msg = document.querySelector(".win-msg");
 // let restart = document.querySelector(".rb");
 let newgame = document.querySelector(".new_game");
+let count = 0;
 let turn0 = true;
 const arry = [
     [0, 1, 2],
@@ -13,13 +14,10 @@ const arry = [
     [0, 4, 8],
     [2, 4, 6],
 ];
-
-let count=0;
 boxs.forEach((box) => {
 
     box.addEventListener("click", () => {
         count++;
-        
         console.log("button is click");
         if (turn0) {//player0
             box.innerHTML = "o";
@@ -40,7 +38,7 @@ boxs.forEach((box) => {
 const reset = () => {
     turn0 = true;
     enablebox();
-    count=0;
+    count = 0;
 };
 
 
@@ -75,21 +73,19 @@ const checkwinner = () => {
         let pos0val = boxs[element[0]].innerHTML;
         let pos1val = boxs[element[1]].innerHTML;
         let pos2val = boxs[element[2]].innerHTML;
-        console.log(pos0val, pos1val, pos2val);
+        console.log(pos0val,pos1val,pos2val);
         if (pos0val != "" && pos1val != "" && pos2val != "") {
             if (pos0val == pos1val && pos1val == pos2val) {
                 console.log("winner", pos0val);
                 showwin(pos0val);
 
             }
-            
-            
-        }
-        if ( count>8) {
-            msg.innerHTML="game is tie";
-            // reset();
-            
-            
+            else if ( count > 8 ) {
+                
+                msg.innerHTML = "Game is Tie";
+
+            }
+
         }
 
     }
